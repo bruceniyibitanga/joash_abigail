@@ -1,26 +1,229 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------------------------------------------------------------------------
+   Design tokens
+   Burnt-orange palette. `ember` is the brand ramp; cream/ink/sand are neutrals
+   tinted warm so they sit naturally beside the orange.
+--------------------------------------------------------------------------- */
+@theme {
+  --color-ember-50: #fdf6f0;
+  --color-ember-100: #f8e7d8;
+  --color-ember-200: #eecbaa;
+  --color-ember-300: #dfa87c;
+  --color-ember-400: #cd7f4c;
+  --color-ember-500: #b65327;
+  --color-ember-600: #9c4420;
+  --color-ember-700: #7d351a;
+  --color-ember-800: #5d2714;
+  --color-ember-900: #3d1a0e;
+
+  --color-cream: #fbf5ec;
+  --color-sand: #e8d5c0;
+  --color-ink: #2a1b12;
+  --color-ink-soft: #574032;
+
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+
+  /* Section rhythm — one knob for vertical pacing across the whole page. */
+  --spacing-section: 8.125rem;
+  --spacing-section-sm: 5.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-ember-500);
+    color: var(--color-cream);
+  }
+
+  /* Visible, on-brand focus ring for keyboard users only. */
+  :focus-visible {
+    outline: 2px solid var(--color-ember-400);
+    outline-offset: 3px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ---------------------------------------------------------------------------
+   Utilities
+--------------------------------------------------------------------------- */
+
+/* Small uppercase label used for eyebrows, nav, and metadata. */
+@utility micro {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Arched "cathedral window" image frame — the signature shape of the design. */
+@utility arch {
+  border-radius: 999px 999px 0 0;
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------------------------
+   Motion
+   Every animation below is opt-in via a `data-*` attribute, and the reveal
+   states are only applied once the client hook marks an element visible, so
+   nothing depends on JS to eventually become readable.
+   `prefers-reduced-motion` disables all of it at the end.
+--------------------------------------------------------------------------- */
+
+/* Scroll reveal — driven by the useInView hook. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal][data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Slow settle on arched photographs as they scroll into frame. */
+[data-settle] {
+  transform: scale(1.14);
+  transition: transform 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-settle][data-visible="true"] {
+  transform: scale(1);
+}
+
+/* Hero load choreography. Runs once on mount, no observer involved. */
+@keyframes hero-panel-in {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes hero-photo-in {
+  from {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-line-in {
+  from {
+    /* Must clear the mask's padding-bottom below, or the line peeks out
+       before the animation starts. */
+    transform: translateY(130%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes badge-in {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-panel {
+  animation: hero-panel-in 0.9s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+.hero-photo-media {
+  animation: hero-photo-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+
+/* The overflow mask that drives the reveal would otherwise crop descenders —
+   the "g" in Abigail. Give it room, then pull the extra space back out so the
+   lines keep their tight spacing. */
+.hero-line {
+  padding-bottom: 0.16em;
+  margin-bottom: -0.16em;
+}
+
+.hero-line > span {
+  display: block;
+  animation: hero-line-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--line-delay, 0ms);
+}
+
+.hero-fade {
+  animation: fade-in 0.6s ease-out 1.3s both;
+}
+
+.badge-pop {
+  animation: badge-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s both;
+}
+
+.badge-ring {
+  animation: spin 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Collapse every animation to its end state rather than removing it, so
+     nothing is left mid-transform or invisible. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-settle] {
+    transform: scale(1);
+  }
 }
