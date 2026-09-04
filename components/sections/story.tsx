@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 import { ArchFrame } from "@/components/ui/arch-frame";
 import { Photo } from "@/components/ui/photo";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { STORY_CHAPTERS, STORY_INTRO } from "@/lib/wedding";
+import { STORY_CHAPTERS, STORY_CTA, STORY_INTRO } from "@/lib/wedding";
 
 export function Story() {
   return (
@@ -69,6 +71,23 @@ export function Story() {
             </li>
           ))}
         </ol>
+
+        <Reveal delay={280}>
+          <div className="mt-16 lg:ml-[8.333%] lg:mt-20">
+            <Link
+              href={STORY_CTA.href}
+              className="micro group inline-flex items-center gap-3 rounded-full border border-ember-600/35 px-6 py-4.5 text-ember-700 transition-colors duration-300 hover:border-ember-600 hover:bg-ember-600 hover:text-cream"
+            >
+              {STORY_CTA.label}
+              <span
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              >
+                →
+              </span>
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
