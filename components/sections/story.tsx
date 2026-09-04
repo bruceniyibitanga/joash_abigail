@@ -62,9 +62,14 @@ export function Story() {
                     <h3 className="font-display mb-2.5 text-2xl font-normal">
                       {chapter.title}
                     </h3>
-                    <p className="text-ink-soft max-w-[38ch] text-[0.9375rem] leading-relaxed">
-                      {chapter.body}
-                    </p>
+                    <blockquote className="border-ember-600/25 max-w-[38ch] border-l pl-4">
+                      <p className="text-ink-soft text-[0.9375rem] leading-relaxed italic">
+                        “{chapter.body}”
+                      </p>
+                      <cite className="micro mt-3 block text-ember-600 not-italic">
+                        — {chapter.voice}
+                      </cite>
+                    </blockquote>
                   </div>
                 </article>
               </Reveal>
