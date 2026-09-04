@@ -31,7 +31,10 @@ export type StoryChapter = {
   index: string;
   date: string;
   title: string;
+  /** Verbatim excerpt from the couple's own story — never paraphrased. */
   body: string;
+  /** Whose words `body` quotes. */
+  voice: string;
   /** Tints the placeholder frame until real photography is dropped in. */
   tone: PhotoTone;
   image?: WeddingImage;
@@ -135,7 +138,7 @@ export const STORY_INTRO = {
   eyebrow: "Our Story",
   headingLead: "Two people, one",
   headingEm: "faithful God",
-  body: "We did not find each other by accident. From a mutual friend's introduction to two years spent mostly a continent apart, every step of our story was ordered — and we are still amazed at how kindly it was written.",
+  body: "This is our story. A story that needs to be told. A story that needs to be heard. It's a testimony of what God can do, when you trust Him with one of the most important decisions you will ever make.",
 };
 
 export const STORY_CHAPTERS: StoryChapter[] = [
@@ -144,7 +147,8 @@ export const STORY_CHAPTERS: StoryChapter[] = [
     index: "01.",
     date: "February 2023",
     title: "How we met",
-    body: "A mutual friend introduced us by sharing our contacts. Joash's first message arrived on the 12th of February — Abigael had prayed and fasted before agreeing to it; Joash, newly arrived in Australia, had prayed for God to show him where his wife would come from.",
+    voice: "Abigael",
+    body: "On the 12th of February 2023, a simple message from Joash appeared on my phone. He introduced himself and shared why he had reached out. Little did I know that this ordinary message would become the first page of a beautiful story God had already begun writing.",
     tone: "ember",
     image: {
       src: "/images/img1.jpg",
@@ -156,7 +160,8 @@ export const STORY_CHAPTERS: StoryChapter[] = [
     index: "02.",
     date: "2023 – 2024",
     title: "Growing together",
-    body: "Two years of long-distance friendship — prayer, hymns, daily calls, and a season of silence that tested us both. We learned that love holds together on honesty more than proximity, and that God can be trusted with every mile in between.",
+    voice: "Abigael",
+    body: "It is by God's grace that we made it this far. We intentionally worked through our communication challenges. We learnt to express our fears honestly, listen carefully, and trust each other despite the miles between us. This lasted the whole of 2024.",
     tone: "clay",
     image: {
       src: "/images/img2.jpg",
@@ -168,7 +173,8 @@ export const STORY_CHAPTERS: StoryChapter[] = [
     index: "03.",
     date: "December 2025",
     title: "The promise",
-    body: "Joash proposed the only way that made sense for two people who had written each other across continents — on the final page of a book, after months of hidden notes. Abigael read it in a single day, turned to the last page, and said a joyful yes.",
+    voice: "Abigael",
+    body: "Waiting for me was the greatest surprise I had ever imagined — a heartfelt marriage proposal. With tears of joy and a heart already deeply in love with my J, I said a big, joyful \"Yes!\" It was the most creative and memorable engagement I could have ever asked for.",
     tone: "dusk",
     image: {
       src: "/images/img4.jpg",
@@ -189,7 +195,7 @@ export const FULL_STORY_INTRO = {
   eyebrow: "Our Story, In Full",
   headingLead: "Every chapter,",
   headingEm: "as we lived it",
-  body: "This is our story — a testimony of what God can do when you trust Him with one of the most important decisions you will ever make. Told here in both our own words, exactly as we lived it.",
+  body: "This is our story. A story that needs to be told. A story that needs to be heard. It's a testimony of what God can do, when you trust Him with one of the most important decisions you will ever make. This is the story of Abigael & Joash…",
 };
 
 export const FULL_STORY_CLOSING = "To God be all the glory.";
@@ -209,18 +215,19 @@ export const FULL_STORY_PHASES: FullStoryPhase[] = [
       {
         name: "Abigael",
         paragraphs: [
-          "In January 2023, a mutual friend asked if he could introduce us by sharing my contact with Joash. I hesitated — relationships felt like too big a step to enter carelessly — but after praying it through with a close friend, I found peace. On the 10th of February, after a time of prayer and fasting, I agreed to share my contact. I wanted to start this the right way, with God first.",
-          "Two days later, on the 12th of February 2023, a simple message from Joash appeared on my phone. I had no idea that ordinary message was the first page of a story God had already begun writing. From there our friendship grew through prayer, daily devotions, singing hymns together, and long conversations over voice and video calls — one step at a time, with God leading. Honestly, I think I knew fairly early that this was the one.",
-          "As our confidence in this journey grew, I visited Joash's parents, and later told my own — bringing this first phase to a beautiful close.",
+          "In January 2023, a mutual friend asked if he could introduce Joash and I by sharing my contact. I hesitated for a while because that was not my focus at that time. Also, relationships are such a big step in life so I was really cautious to start the first one, but after praying with one of my girlfriends, I found peace and agreed to share my contact on the 10th of February after praying and fasting because I wanted to start with God.",
+          "On the 12th of February 2023, a simple message from Joash appeared on my phone. He introduced himself and shared why he had reached out. Little did I know that this ordinary message would become the first page of a beautiful story God had already begun writing.",
+          "From that day, our friendship blossomed through prayer, daily devotions, singing hymns together, and heartfelt conversations in WhatsApp voice and video calls, we allowed God to lead us one step at a time. Honestly, at this point, as they say, ladies always know when they know that they know that this is the one. This was me.",
+          "As our friendship grew, so did the confidence that this journey was worth sharing with those closest to us. I visited Joash's parents, and later shared our friendship with my own parents, bringing this beautiful first phase to a close.",
         ],
       },
       {
         name: "Joash",
         paragraphs: [
-          "At the start of 2023, after much prayer, I asked a close friend to help me in the search for a wife. It had been a year since I'd moved from Kenya to Australia for further studies, and I was asking God whether my better half would come from home or from somewhere new. I left it in His hands.",
-          "A few weeks later my friend called, certain he had found the one — Abigael. \"So quick,\" I thought. She was hesitant to share her contact at first, but a few days later she agreed, along with a few photos. Modest and simple, I remember thinking.",
-          "On the 12th of February 2023, I finally reached out. That first conversation is still vivid to me — how easily we connected despite different networks and different corners of the world. Our age gap gave me pause, but her maturity and thoughtfulness answered it well. We prayed together, sang together, and talked through what a true home built on faith would look like. I'm grateful, looking back, for the distance between us in that season — it kept us from the danger of physical intimacy so many young couples fall into too soon, and it taught us to trust God's guidance over our own judgment. \"For we live by faith and not by sight\" became real for us.",
-          "A few months in, Abigael met my family, and I encouraged her to tell her parents about us too — the right thing to do. That she was willing to confirmed how seriously she was taking this. That was the introduction phase.",
+          "At the beginning of the year 2023, after much prayer and consideration, I consulted with a very close friend on matters concerning Marriage. It had been one year since I moved from my home country Kenya to Australia to pursue further studies. I trusted him to help me with the search. Having travelled to a completely new country, I was still seeking God to know His will. Would my better half come from across the border or from my roots? I left it in God's hands.",
+          "A few weeks later, I receive a call from my friend. He tells me that he is positive he found the one. Her name is Abigael. \"So quick!!!\" I thought to myself. \"But there is one problem,\" he says. \"She is a bit hesitant about sharing her contacts with you.\" So we gave it a few days, and she finally agreed to share her contacts with a few pictures. \"Very modest and simple in dress,\" I thought to myself as I looked at the pictures.",
+          "On the 12th February 2023, I finally reached out to Abigael and introduced myself. I remember that first conversation like it was yesterday! One thing that stood out to me was how fast we were able to connect even though we were using different networks from different physical locations. There was definitely something special here. Our age difference threw me back a little bit, but she made it up with her thoughtful and mature ways of engagement. We prayed together, sang together, and exchanged our thoughts on marriage and the principles of making a true Adventist Home. Looking back, I thank God for the distance that existed between myself and Abigael at this stage of the relationship. It took away the danger of physical intimacy, which many young people fall into too early in their relationships. Most importantly, it made us learn to trust in God's guidance more than our own judgement. The verse \"for we live by faith and not by sight\" became a reality for us.",
+          "A few months into our conversations, Abigael had a chance to meet my family members and spend some time with them. I also suggested that she tell her parents about our intentional friendship, for this was the right thing to do. Her willingness to do this confirmed to me that she was truly committed and serious about our blossoming relationship. This was the introduction phase.",
         ],
       },
     ],
@@ -235,15 +242,14 @@ export const FULL_STORY_PHASES: FullStoryPhase[] = [
       {
         name: "Abigael",
         paragraphs: [
-          "Like every meaningful relationship, phase two tested us. Distance, misunderstandings, and communication challenges became opportunities to grow in patience and dependence on God. I had already decided Joash was the one, and telling our parents about him felt like a wonderful step forward.",
-          "Then our communication slowed. I kept wondering what I'd done wrong but could find no answer, and I cried more than I want to admit — I couldn't imagine losing the first relationship I had invested so much in, to the point of telling my parents. Still, I held on to the belief that if God was in our story, He would lead us through it. Before I could give up entirely, I called our mutual friend, shared my heart, and resolved to pray for ten days. On the seventh day, I felt led to call Joash. He asked if the silence had affected me — it had — and he apologised honestly and explained himself. That conversation began our restoration. We learned that love is strengthened by grace, honest communication, and clear expectations.",
+          "Like every meaningful relationship, in phase two we experienced seasons that tested us. Distance, misunderstandings, and communication challenges became opportunities for growth, patience, and dependence on God. As I said earlier, I had already made up my mind that Joash was the one. I was so excited to see our relationship grow, and telling our parents about it felt like a beautiful step forward.",
+          "Soon after, our communication became less frequent. I kept asking myself whether I had done something wrong, but I could find no answer. I would cry most of the time, and I could not imagine losing this first relationship that I had already invested emotionally in, to the point of informing my parents. Even then, I held on to the belief that if God was in our story, He would lead us through it. Before I could give it all up, I called our Eliezer, shared my heart, and later resolved to pray for ten days. On the seventh day, after speaking with our mutual friend, I felt impressed to call Joash. He asked if the silence had affected me. I admitted that it surely did, and he sincerely apologized, explained his silence, and that honest conversation marked the beginning of restoration. This season taught us that love is strengthened by grace, honest communication, and clear expectations.",
         ],
       },
       {
         name: "Joash",
         paragraphs: [
-          "This was the hardest phase of our relationship. As the early excitement faded, we had to deal with the realities of distance and mismatched expectations. I still felt something special between us, but I was treading carefully — I didn't want to be the kind of man who trifles with someone's heart. When things began moving faster than I expected, I got cold feet. Juggling work and school gave me the perfect excuse to disappear.",
-          "It took me two months to reach out again, with some mediation from my close friend. It was a hard, lengthy conversation — I had put Abigael through real emotional turmoil, and I apologised sincerely and promised to make things right. I was pleasantly surprised, and grateful, that she was still willing to work on us. Even through her tears, she could see some light ahead. We both learned how important it is to set clear expectations at every stage of a relationship, starting with being open and honest with one another. Coming out of it felt like coming out of a storm — so that's what I call this phase.",
+          "This turned out to be the most trying phase of our relationship. As the initial excitement of getting to know each other was slowly fading away, Abigael and I had to deal with the realities of distance, communication, and alignment of expectations. Even though I still felt that there was something special about this relationship, I was treading carefully, for I did not want to be part of the congregation that delights in the trifling of other people's hearts. So when things began to move faster than I had expected, I developed cold feet. Juggling between work and school, I had the perfect excuse to disappear. However, I was wrong in thinking that, by simply going quiet without notice, I would just make things go away. It took me two months before I reached out to Abigael again, and that with additional mediation by my close friend. It is another day that I vividly recall. It was a hard and lengthy conversation. I had put her through a lot of emotional turmoil. I sincerely apologised and promised to make things right again. I was pleasantly surprised that Abigael was still willing to work on the relationship. It seemed like she could still see through the tears. Though albeit dim, she could see some light at the end of the tunnel. One positive lesson that we both learnt in this phase is the importance of setting clear expectations at every stage of the relationship. The first step towards setting clear expectations is being open and honest with one another. Coming out of this phase felt like we had just come out of a storm. So I called it the storming phase.",
         ],
       },
     ],
@@ -258,13 +264,13 @@ export const FULL_STORY_PHASES: FullStoryPhase[] = [
       {
         name: "Abigael",
         paragraphs: [
-          "It is by God's grace that we made it through. We intentionally worked through our communication challenges, learning to express our fears honestly, listen carefully, and trust each other despite the miles between us. Though we could not see each other in person, our friendship continued to grow stronger through all of 2024 — more intentional, more honest, more open with one another.",
+          "It is by God's grace that we made it this far. We intentionally worked through our communication challenges. We learnt to express our fears honestly, listen carefully, and trust each other despite the miles between us. Though we could not see each other in person, our friendship continued to grow stronger. This lasted the whole of 2024. We learnt to be more intentional, honest and open to one another.",
         ],
       },
       {
         name: "Joash",
         paragraphs: [
-          "We were now ready to explore the most exciting phase yet, before we'd even had the chance to meet in person — I called this the norming phase. With clearly set expectations and boundaries, things began to normalise. Because of our time zone differences, we set the expectation for how many times a week we'd call each other, and for how long. We were intentional with every interaction, and our trust in each other grew rapidly. We learned that long-distance relationships can only work when there is absolute honesty and trust.",
+          "Abigael and I were now ready to explore the most exciting phase before we had the chance to physically meet up. I called this stage the Norming Phase. With clearly set expectations and boundaries, things began to normalize. Because of our time zone differences, we even set the expectation for the number of times we would call each other every week and how long the calls should be. We were very intentional with every interaction. Slowly but surely, our communication was improving. Our trust in each other was also growing rapidly. We quickly learnt that long-distance relationships can only work when there is absolute honesty and trust.",
         ],
       },
     ],
@@ -283,15 +289,15 @@ export const FULL_STORY_PHASES: FullStoryPhase[] = [
       {
         name: "Abigael",
         paragraphs: [
-          "This was my favourite chapter — the one we had prayed and waited nearly two years for. On Monday the 3rd of February 2025, we finally saw each other face to face for the very first time. It's a moment I'll never forget — we even recorded our first video together, a sweet memory that still brings a smile to my face. The days that followed took us to Ngong Hills, where we honestly shared our strengths, weaknesses, fears, and the reasons we believed God was leading us toward marriage. To this day, I believe Ngong Hills holds some of our sweetest memories.",
-          "We travelled to my home, and on the 8th of February, Joash met my parents — another beautiful milestone in our journey. On the 13th, we travelled to Mombasa with a fellow couple, where we intentionally answered every question we had written down for each other. The next day we explored Mombasa, talked until nearly 3am, and made memories we'll cherish forever. Then Sabbath came, and we worshipped together in church.",
+          "Phase Four was my favourite chapter, the chapter we had prayed and waited for…On Monday, 3rd February 2025, after nearly two years of friendship, we finally saw each other face to face for the very first time. It was a moment I'll never forget. We even recorded our first video together, a sweet memory that still brings a smile to my face. The next few days would be spent at Ngong Hills, where we honestly shared our strengths, weaknesses, fears, and the reasons we believed God was leading us toward marriage. We reflected on our past journeys and everything God had taught us through our long-distance friendship. To this day, I believe Ngong Hills holds some of our sweetest memories. We travelled to my home, and on the 8th of February, Joash met my parents, another beautiful milestone in our journey.",
+          "On the 13th of February, we travelled to Mombasa with our friends, a fellow couple, where we intentionally answered every question we had written down for each other. The following day, we explored the beauty of Mombasa, talked until nearly 3:00 a.m., and created memories we'll cherish forever. Sabbath came and we worshipped together in church.",
         ],
       },
       {
         name: "Joash",
         paragraphs: [
-          "After much prayer and consideration, I was affirmed in my decision to travel back to Kenya to meet Abigael for the very first time. I asked God to open the way and to give me assurance this was the right step. Through His providence, I managed to secure a flight ticket for half the market price — that, to me, was the assurance I was looking for. I still recall that first day we met physically. I could see the anxiety written all over Abigael's face — honestly, we were both anxious, so much that we couldn't even eat that morning. But we were so excited to finally meet after nearly two years of waiting.",
-          "Since my stay in Kenya was short, we made every moment count. We spent much of our initial days at Ngong Hills, pouring out our hearts to each other, and it became clear our values and principles on marriage were perfectly aligned. Meeting Abigael's parents for the first time was also a memorable experience. To affirm our decision further, we travelled to Mombasa by train — we had agreed to write down every question we had for each other and try to answer them all during the five-hour journey. I was still praying for a clear sign, and that prayer was answered while we were in Mombasa, during a small altercation between us. The way Abigael handled the reconciliation told me everything I needed to know.",
+          "After much prayer and consideration, I was affirmed in my decision to travel back to Kenya to meet with Abigael for the very first time. I prayed and asked God to open the way and provide the means for me to travel back home. I also asked for the assurance that this was the right step to take. Through God's providence, I managed to secure a flight ticket for half the market price. This, to me, was the assurance I was looking for. I travelled back home with much anticipation. I still recall that first day that we met physically. I could see the anxiety written all over Abigael's face. Actually, we were both anxious. We couldn't even eat that morning. However, we were so excited to finally meet each other after nearly two years of waiting. Since my stay in Kenya was only for a short while, we had to make each moment count. We also needed to know each other more so that we could affirm our decision to proceed or not to proceed. We spent much of our initial days in Ngong Hills pouring out our hearts to each other. It was clear to me that our values and principles on marriage were perfectly aligned.",
+          "Meeting Abigael's parents for the first time was also a very interesting experience. To affirm our decisions further, we travelled to Mombasa by train. Abigael and I had agreed to write down all the questions we had for each other, and we would try to answer all of them during the five-hour journey to Mombasa. It was a thrilling experience. However, I was still praying for God to give me a clear sign. This prayer would be answered while in Mombasa, when Abigael and I had a little altercation. I saw how she handled the reconciliation process, and this affirmed me in my decision.",
         ],
       },
     ],
@@ -310,16 +316,16 @@ export const FULL_STORY_PHASES: FullStoryPhase[] = [
       {
         name: "Abigael",
         paragraphs: [
-          "Phase five marked the beginning of our courtship. On the 16th of February 2025, as we travelled back from Mombasa on the Premium SGR, Joash asked me to be his courtship partner. With all my heart, I said a big \"Yes!\" Tears of joy filled my eyes as we dedicated our courtship to the Lord right there on the train. By then, I had come to know Joash as a caring, kind, loving, God-fearing, and faithful man, and every day I found myself growing more certain that God had brought us together for His purpose.",
-          "As our time together came to an end, the 19th of February became one of the most emotional days of our journey. His family, friends, and I accompanied Joash to the airport as he returned to Australia. Having felt like we had known each other forever, saying goodbye after only sixteen days together was incredibly difficult. Though he was leaving physically, he remained in my heart and mind. I had consciously chosen him as my life partner, and we left the airport holding on to one hope: that in God's perfect time, He would bring us together again.",
-          "Later in 2025, we began premarital counselling over Zoom with our pastor, who recommended the book I Married You by Walter Trobisch. Toward the end of the year, Joash surprised me with a copy, with handwritten notes tucked into its pages, and asked me to read it from beginning to end.",
+          "Phase Five marked the beginning of our courtship. On the 16th of February 2025, as we travelled back from Mombasa on the Premium SGR, Joash asked me to be his courtship partner. With all my heart, I said a big \"Yes!\" Tears of joy filled my eyes as we dedicated our courtship to the Lord right there on the train. I couldn't believe how faithfully God had led us to that moment. By then, I had come to know Joash as a caring, kind, loving, God-fearing, and faithful man. Every day, I found myself growing in love and in the quiet assurance that God had brought us together for His purpose.",
+          "As our time together came to an end, the 19th of February 2025 became one of the most emotional days of our journey. His family, friends, and I accompanied Joash to the airport as he returned to Australia. Having felt like we had known each other forever, saying goodbye after only sixteen days together was incredibly difficult. As he checked in, I could no longer hold back my tears. Though he was physically leaving, he remained in my heart and in my mind. I had consciously chosen him as my life partner, and we left the airport holding on to one hope: that in God's perfect time, He would bring us together again. AMEN.",
+          "Later in 2025, we began Zoom premarital counseling with our pastor, who recommended the book I Married You by Walter Trobisch. Towards the end of the year, Joash surprised me with a copy of the book, placing handwritten notes on different pages and asking me to read it from beginning to end.",
         ],
       },
       {
         name: "Joash",
         paragraphs: [
-          "On our way back to Nairobi, I asked Abigael to officially become my courtship partner. She said yes — she had chosen me too. We were entering a more intimate phase, so we established boundaries for this chapter, choosing patience and faithfulness even in our smaller engagements. It had been barely three weeks since we'd met in person, but I felt a quiet assurance that God was leading us to this moment. It was time for me to go back to Australia, and this was truly a difficult moment for us. I remember our last family dinner before I left — the table was quiet, both of us reminiscing over how wonderful our short time together had been. At the airport, I took my mother aside and whispered to her, \"Take care of her for me. We have loved each other.\"",
-          "Later, Abigael and I began premarital counselling with our pastor, and these sessions turned out to be a defining moment for us — our eyes were opened to see marriage for its true purpose, not just its novelty. A book called I Married You was recommended to us, which would go on to become the very book I used to propose to Abigael.",
+          "On our way back to Nairobi, I asked Abigael to become my courtship partner officially. She said YES! She had chosen me as well! We were now entering into a more intimate phase, so we had to establish boundaries for this chapter. We had to be patient and faithful even in our little engagements. It was barely 3 weeks since we had met, but I could feel a sense of quiet assurance that God was leading, and that He had brought us to this moment. I chose her. It was time for me to go back to Australia. This was truly a difficult moment for us. I remember the last dinner that we had with family just before my departure. The table was quiet. Abigael and I were both reminiscing about how wonderful our time together was, even though it was a short while. At the airport, I took my mom aside and whispered to her ear, saying, \"Take care of her for me. We have loved each other!\"",
+          "Later, Abigael and I decided to take pre-marital counselling sessions with our Pastor. These counselling sessions turned out to be a defining moment in our relationship. Our eyes were opened such that we began to see Marriage for its true purpose, not just for its novelty. A book called \"I Married You\" was recommended to us by the Pastor, which turned out to be the book I would use to make a marriage proposal to Abigael.",
         ],
       },
     ],
@@ -338,15 +344,16 @@ export const FULL_STORY_PHASES: FullStoryPhase[] = [
       {
         name: "Abigael",
         paragraphs: [
-          "On the 30th of December 2025, I reached the final page of I Married You. Joash had given me one special instruction — do not open the last page until you have read every page before it. The book was so inspiring, filled with sticky notes carrying beautiful promises and heartfelt commitments for our future, that I could not stop reading. I finished the entire book in a single day.",
-          "Then I turned to the final page. Waiting for me was the greatest surprise I had ever imagined — a heartfelt marriage proposal. With tears of joy and a heart already deeply in love, I said a big, joyful \"Yes!\" It was the most creative and memorable engagement I could have ever asked for. From that beautiful moment, we began planning our wedding for the 6th of September 2026, and today I look forward to walking down the aisle to the man I chose.",
+          "On 30th December 2025, I reached the final page of I Married You. Joash had given me one special instruction: do not open the last page until you have read every page before it. The book was so inspiring, and the sticky notes he had placed throughout it were filled with beautiful promises and heartfelt commitments for our future. I became so curious that I could not stop reading, and I finished the entire book in just one day.",
+          "Then I turned to the final page.",
+          "Waiting for me was the greatest surprise I had ever imagined - a heartfelt marriage proposal. With tears of joy and a heart already deeply in love with my J, I said a big, joyful \"Yes!\" It was the most creative and memorable engagement I could have ever asked for.",
+          "From that beautiful moment, we began planning our wedding on 6th September 2026, and today I look forward to walking down the aisle to the man I chose.",
         ],
       },
       {
         name: "Joash",
         paragraphs: [
-          "It was the close of the year 2025, and I had a deep conviction that it was time. Abigael and I had basically been in a long-distance courtship for some time, and the idea came to me one night. I woke up and immediately picked up I Married You by Walter Trobisch, a book I had just finished reading and resonated deeply with. I began writing sticky notes on its most significant pages, connecting the author's experiences with our own. Toward the end of the book, I declared my commitment to take our relationship to the next level, and finished it by writing a marriage proposal on the very last page — with instructions that Abigael could only read from beginning to end, never skipping ahead.",
-          "I was pleasantly surprised when Abigael told me she had finished reading the book just a day after receiving it. But most importantly — she said yes. We immediately set the wedding date for the 6th of September 2026. This is the day the Lord has made; we will rejoice and be glad in it.",
+          "It was the close of the year 2025, and I had a deep conviction that it was time. Abigael and I had basically been in a 'long-distance Courtship' for some time. I had this brilliant idea come to mind at night. I woke up and immediately picked up the book \"I Married You\" by Walter Trobisch. I had just finished reading this book, and I resonated much with the experiences of the author. I began writing sticky notes on significant parts of the book, connecting the experiences of the author with the experiences that Abigael and I had together. Towards the end of the book, I declared my commitment to take our relationship to the next level, and finished the book by writing a marriage proposal on the last page. The instructions for Abigael, as she read through this book, were that she could only read from beginning to end and not the other way around. I was pleasantly surprised when Abigael told me that she had finished reading the book just a day after she received it from overseas. But most importantly, SHE SAID YES!!.. We immediately set up the date for the wedding as September 6th, 2026. This is the day the Lord has made! We will rejoice and be glad in it!!!..",
         ],
       },
     ],
