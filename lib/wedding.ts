@@ -97,9 +97,9 @@ export type FullStoryPhase = {
 /* -------------------------------------------------------------------------- */
 
 export const COUPLE: Couple = {
-  bride: "Abigail",
+  bride: "Abigael",
   groom: "Joash",
-  displayName: "Joash & Abigail",
+  displayName: "Joash & Abigael",
 };
 
 export const WEDDING_DATE: WeddingDate = {
@@ -121,7 +121,7 @@ export const BLESSING_SCRIPTURE: Scripture = {
 };
 
 export const HERO_IMAGE: WeddingImage = {
-  src: "/images/img3_hero.jpg",
+  src: "https://lh3.googleusercontent.com/pw/AP1GczMcKV54Cgdb0x9dauwz8X9K-X3R3sI4tYTnm26RgReIQqexyJpChgU032MotygmzeiopfEqsJrg6M1oFHWQlANCPJ42QO3xIZZmJTGtmXZquJJWlyfOnK56DkddvMlVDOBDLD_dEYIcy1-4lt42725oMw=w1155-h1738-s-no-gm?authuser=0",
   alt: `${COUPLE.groom} and ${COUPLE.bride} seated together, laughing`,
 };
 
@@ -152,7 +152,7 @@ export const STORY_CHAPTERS: StoryChapter[] = [
     tone: "ember",
     image: {
       src: "/images/img1.jpg",
-      alt: "Joash and Abigail on a hillside beneath the wind turbines",
+      alt: "Joash and Abigael on a hillside beneath the wind turbines",
     },
   },
   {
@@ -165,7 +165,7 @@ export const STORY_CHAPTERS: StoryChapter[] = [
     tone: "clay",
     image: {
       src: "/images/img2.jpg",
-      alt: "Joash and Abigail travelling together by train",
+      alt: "Joash and Abigael travelling together by train",
     },
   },
   {
@@ -178,7 +178,7 @@ export const STORY_CHAPTERS: StoryChapter[] = [
     tone: "dusk",
     image: {
       src: "/images/img4.jpg",
-      alt: "Joash and Abigail dressed for a celebration, smiling together",
+      alt: "Joash and Abigael dressed for a celebration, smiling together",
     },
   },
 ];
@@ -209,7 +209,7 @@ export const FULL_STORY_PHASES: FullStoryPhase[] = [
     tone: "ember",
     image: {
       src: "/images/img5.jpg",
-      alt: "Joash and Abigail sitting together outdoors",
+      alt: "Joash and Abigael sitting together outdoors",
     },
     voices: [
       {
@@ -238,6 +238,10 @@ export const FULL_STORY_PHASES: FullStoryPhase[] = [
     dateLabel: "2023",
     title: "The language of patience",
     tone: "clay",
+    image: {
+      src: "https://lh3.googleusercontent.com/pw/AP1GczMCE57Gtu7ZQjJ9MyDJHwDz-1FJeirqY4OlVp1LY7P1SqUJ2nIsr_TTycIVqEbTv6KuO5322Q-5RvWYQLwUKFEV_K_trmCJgmQIAmSlgROPqkmuAWdgu1O4SqCEyryVfwi6YlvL5EZc3NqXtUH5hdx_9w=w1158-h1738-s-no-gm?authuser=0",
+      alt: "Joash and Abigael in green grass field"
+    },
     voices: [
       {
         name: "Abigael",
@@ -260,6 +264,10 @@ export const FULL_STORY_PHASES: FullStoryPhase[] = [
     dateLabel: "2024",
     title: "Growing together",
     tone: "dusk",
+    image: {
+      src: "https://lh3.googleusercontent.com/pw/AP1GczOS3ijIcEpfrAITwy-Z-LKcMvDgzdPbnDow7rCZs52L4LKq8GKWY4D47d6FvyanbYDoAfkHheuuhZFAWF3_IV_vfziHk7cTK3ZEQwRpEFGqHDU5GUBpLEUx4ZJc3sgsfWLqVCjJhkFT0dAhNGJhzGUQ6A=w1158-h1738-s-no-gm?authuser=0",
+      alt: "Joash and Abigael in a park"
+    },
     voices: [
       {
         name: "Abigael",
@@ -283,7 +291,7 @@ export const FULL_STORY_PHASES: FullStoryPhase[] = [
     tone: "ember",
     image: {
       src: "/images/img1.jpg",
-      alt: "Joash and Abigail on a hillside beneath the wind turbines",
+      alt: "Joash and Abigael on a hillside beneath the wind turbines",
     },
     voices: [
       {
@@ -310,7 +318,7 @@ export const FULL_STORY_PHASES: FullStoryPhase[] = [
     tone: "clay",
     image: {
       src: "/images/img2.jpg",
-      alt: "Joash and Abigail travelling together by train",
+      alt: "Joash and Abigael travelling together by train",
     },
     voices: [
       {
@@ -338,7 +346,7 @@ export const FULL_STORY_PHASES: FullStoryPhase[] = [
     tone: "dusk",
     image: {
       src: "/images/img4.jpg",
-      alt: "Joash and Abigail dressed for a celebration, smiling together",
+      alt: "Joash and Abigael dressed for a celebration, smiling together",
     },
     voices: [
       {
@@ -377,28 +385,28 @@ export const SCHEDULE: SchedulePart[] = [
         location: "Laiser Hill SDA Church",
       },
       {
-        id: "processional",
+        id: "singing",
         time: "10:30",
-        title: "Processional & opening hymn",
-        body: "We enter together and lift the first song. Please join in — the singing is the whole point.",
+        title: "Singing Session",
+        body: "A time of congregational praise and worship",
       },
       {
-        id: "word",
+        id: "processional",
         time: "11:00",
-        title: "Worship & the Word",
-        body: "A time of praise, and a short charge from Scripture on the covenant we are about to make.",
+        title: "Processional",
+        body: "Bridal party entry/processional",
+      },
+      {
+        id: "sermon",
+        time: "12:00",
+        title: "Wedding Sermon",
+        body: "A message from the Bible on the covenant we are about to make.",
       },
       {
         id: "vows",
-        time: "11:40",
-        title: "Vows",
-        body: "The promises themselves. Spoken before God, and before every person in the room.",
-      },
-      {
-        id: "prayer",
-        time: "12:15",
-        title: "Prayer of dedication",
-        body: "Our families gather around us to pray a blessing over this new home.",
+        time: "12:30",
+        title: "Marriage Vows",
+        body: "Vows made by bride and groom",
       },
       {
         id: "register",
@@ -407,22 +415,28 @@ export const SCHEDULE: SchedulePart[] = [
         body: "The paperwork, made joyful by the people watching it happen.",
       },
       {
-        id: "recessional",
+        id: "music",
         time: "1:00",
-        title: "Recessional",
-        body: "We walk out as husband and wife. Then we make our way to Jakin Gardens.",
+        title: "Special Music",
+        body: "A time of special music by different singing groups",
       },
+      {
+        id: "recessional",
+        time: "1:30",
+        title: "Recessional",
+        body: "Bride and groom exit the church",
+      }
     ],
   },
   {
     id: "photos",
     label: "Photo Session",
     venue: "Jakin Gardens",
-    window: "1:30 PM — 2:30 PM",
+    window: "2:00 PM — 3:00 PM",
     events: [
       {
         id: "photo",
-        time: "1:30",
+        time: "2:00",
         title: "Main photo session",
         body: "The bridal party steps away for photographs while guests are welcomed into the gardens.",
         location: "Jakin Gardens",
@@ -437,14 +451,14 @@ export const SCHEDULE: SchedulePart[] = [
     events: [
       {
         id: "welcome",
-        time: "2:30",
+        time: "3:00",
         title: "Welcome & grace",
         body: "Guests are seated, the couple is received, and we give thanks before we eat.",
         location: "Jakin Gardens",
       },
       {
         id: "meal",
-        time: "3:00",
+        time: "3:15",
         title: "The meal is served",
         body: "Plenty of it, with vegetarian options throughout. Tell us on your RSVP and we will make sure you are looked after.",
       },
@@ -498,7 +512,7 @@ export const DETAILS: DetailCard[] = [
     photo: "dusk",
     image: {
       src: "/images/img5.jpg",
-      alt: "Joash and Abigail sitting together on the grass outdoors",
+      alt: "Joash and Abigael sitting together on the grass outdoors",
     },
   },
   {

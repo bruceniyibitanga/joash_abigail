@@ -176,7 +176,7 @@
 }
 
 /* The overflow mask that drives the reveal would otherwise crop descenders —
-   the "g" in Abigail. Give it room, then pull the extra space back out so the
+   the "g" in Abigael. Give it room, then pull the extra space back out so the
    lines keep their tight spacing. */
 .hero-line {
   padding-bottom: 0.16em;
